@@ -2,9 +2,16 @@ package edu.pitt.cs;
 
 //TODO: Import libraries as needed
 import java.util.NoSuchElementException;
+import java.util.TreeSet;
+
 
 public class SortedCollection {
 	// TODO: Add member variables or methods as needed
+	private TreeSet<Integer> collection; // should automatically sort as we add to it
+
+    public SortedCollection() {
+        collection = new TreeSet<>();
+    }
 
 	/**
 	 * Adds the number n to the collection.
@@ -13,7 +20,7 @@ public class SortedCollection {
 	 * @return always returns true
 	 */
 	public boolean add(int n) {
-		// TODO: Implement
+		collection.add(n);
 		return true;
 	}
 
@@ -24,8 +31,10 @@ public class SortedCollection {
 	 * @return the smallest number in the collection
 	 */
 	public int remove() throws NoSuchElementException {
-		// TODO: Implement
-		return 0;
+		if (collection.isEmpty()) {
+            throw new NoSuchElementException("Collection is empty");
+        }
+        return collection.pollFirst();
 	}
 
 	/**
@@ -50,6 +59,16 @@ public class SortedCollection {
 		
 		// TODO: add numbers in commandline arguments to collection using the add(int) method.
 		// If any commandline argument is not a number, call showUsage() and return.
+		for (int i = 0; i < args.length; i++) {
+			try {
+				int number = Integer.valueOf(args[i]);
+				collection.add(number);
+			} 
+			catch (NumberFormatException e) {
+				showUsage();
+				return;
+			}
+		}
 		
 		System.out.print("sorted: ");
 		for (int i = 0; i < args.length; i++) {
