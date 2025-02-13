@@ -1,0 +1,21 @@
+{
+  "id": "b089698d-0c06-4dba-b320-2d94cf77b61b",
+  "version": "2.0",
+  "name": "PittEdu",
+  "url": "",
+  "tests": [{
+    "id": "e171ba29-0bc9-44ad-901c-7604498c57a7",
+    "name": "Untitled",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "9cda339a-93dc-4be6-8a54-1046a314ac1e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e171ba29-0bc9-44ad-901c-7604498c57a7"]
+  }],
+  "urls": [],
+  "plugins": []
+}
